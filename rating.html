@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#030b1a">
+    <title>Рейтинг — Виртуальная футбольная биржа</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+        <linearGradient id="gUp" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#19e68c" stop-opacity=".35"/>
+            <stop offset="1" stop-color="#19e68c" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gDown" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff4558" stop-opacity=".3"/>
+            <stop offset="1" stop-color="#ff4558" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gRing" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4dffb0"/>
+            <stop offset="1" stop-color="#0aa763"/>
+        </linearGradient>
+    </defs>
+    <symbol id="i-wallet" viewBox="0 0 24 24">
+        <path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H18v3"/>
+        <path d="M3 7.5V18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2H5.5A2.5 2.5 0 0 1 3 7.5z"/>
+        <circle cx="16.5" cy="14" r=".6"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M3 3v18h18"/>
+        <path d="M7 15l4-4 3 3 6-7"/>
+        <path d="M16 7h4v4"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2"/>
+        <path d="M3 10h18M8 3v4M16 3v4"/>
+        <path d="M8 14h2M12 14h2M16 14h.01M8 17.5h2M12 17.5h2"/>
+    </symbol>
+    <symbol id="i-news" viewBox="0 0 24 24">
+        <rect x="4" y="3" width="16" height="18" rx="2"/>
+        <path d="M8 8h8M8 12h8M8 16h5"/>
+    </symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24">
+        <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/>
+        <path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/>
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24">
+        <path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7M10 20a2 2 0 0 0 4 0"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="M20 20l-4-4"/>
+    </symbol>
+    <symbol id="i-back" viewBox="0 0 24 24">
+        <path d="M15 5l-7 7 7 7"/>
+    </symbol>
+    <symbol id="i-next" viewBox="0 0 24 24">
+        <path d="M9 5l7 7-7 7"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+        <path d="M12 3l2.7 5.9 6.3.7-4.7 4.3 1.3 6.3L12 17l-5.6 3.2 1.3-6.3L3 9.6l6.3-.7z"/>
+    </symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="6" rx="7" ry="3"/>
+        <path d="M5 6v6c0 1.7 3 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3 3 7 3s7-1.3 7-3v-6"/>
+    </symbol>
+    <symbol id="i-growth" viewBox="0 0 24 24">
+        <path d="M4 20V13M10 20V9M16 20v-6"/>
+        <path d="M12 3l5 0 0 5M17 3l-8 7"/>
+    </symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24">
+        <path d="M8 21h8M12 16v5M7 3h10v6a5 5 0 0 1-10 0z"/>
+        <path d="M7 5H4v1.5A3.5 3.5 0 0 0 7.5 10M17 5h3v1.5A3.5 3.5 0 0 1 16.5 10"/>
+    </symbol>
+    <symbol id="i-ball" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 8l3.5 2.5-1.3 4h-4.4l-1.3-4zM12 3v5M20 9.5l-4.5 1M17.5 19l-3.3-4.5M6.5 19l3.3-4.5M4 9.5l4.5 1"/>
+    </symbol>
+    <symbol id="i-face" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16" fill="var(--ring,#102848)"/>
+        <path d="M4.8 28.2c2-8 5.8-11.2 11.2-11.2s9.2 3.2 11.2 11.2" fill="var(--shirt,#1d4fad)"/>
+        <circle cx="16" cy="13.4" r="5.8" fill="var(--skin,#f4d2b4)"/>
+        <path d="M10.2 12.4c.7-4.8 3.2-6.6 5.8-6.6s5.1 1.8 5.8 6.6c-1.6-1.5-3.5-2.1-5.8-2.1s-4.2.6-5.8 2.1z" fill="var(--hair,#2a1a12)"/>
+    </symbol>
+    <symbol id="i-face-b" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16" fill="var(--ring,#102848)"/>
+        <path d="M4.8 28.2c2-8 5.8-11.2 11.2-11.2s9.2 3.2 11.2 11.2" fill="var(--shirt,#1c2433)"/>
+        <circle cx="16" cy="13.6" r="5.8" fill="var(--skin,#e2b48a)"/>
+        <path d="M11.1 16.4c.7 3.1 2.3 4.5 4.9 4.5s4.2-1.4 4.9-4.5c-.9 1.1-2.5 1.7-4.9 1.7s-4-.6-4.9-1.7z" fill="var(--hair,#1a120e)"/>
+        <path d="M10.2 11.8c.8-4.4 3.2-6 5.8-6s5 1.6 5.8 6c-1.6-1.2-3.4-1.7-5.8-1.7s-4.2.5-5.8 1.7z" fill="var(--hair,#1a120e)"/>
+    </symbol>
+    <symbol id="i-face-z" viewBox="0 0 32 32">
+        <circle cx="16" cy="16" r="16" fill="var(--ring,#102848)"/>
+        <path d="M4.8 28.2c2-8 5.8-11.2 11.2-11.2s9.2 3.2 11.2 11.2" fill="var(--shirt,#f4f6fb)"/>
+        <circle cx="16" cy="12.6" r="5.6" fill="var(--skin,#d9b08c)"/>
+        <path d="M11.2 9.4c.8-1.6 2.6-2.6 4.8-2.6s4 1 4.8 2.6c-1.4-.6-3-1-4.8-1s-3.4.4-4.8 1z" fill="#c4a07a"/>
+    </symbol>
+</svg>
+<div class="gallery">
+    <section class="phone " id="rating" aria-label="rating">
+
+        <main class="content"><h1 class="title">Рейтинг</h1>
+            <div class="months" data-seg="#rating .panel">
+                <button class="active" data-v="m">Месяц</button>
+                <button data-v="s">Сезон</button>
+            </div>
+            <p class="upd">Последний пересчёт: 1 ноя 2026, 12:00</p>
+            <div class="rt-h"><span>#</span><span>Игрок</span><span>Портфель</span><span>Изм.</span></div>
+            <div class="panel" data-panel="m">
+                <div class="rt"><span class="medal g" aria-label="1"><svg class="crown" viewBox="160 -780 800 660" aria-hidden="true"><path d="M200-160v-80h560v80H200Zm0-160 80-320 160 120 120-240 120 240 160-120 80 320H200Z"/><text x="560" y="-430" text-anchor="middle" dominant-baseline="central" font-family="Inter,sans-serif" font-size="250" font-weight="800">1</text></svg></span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#e8c56a;--shirt:#1d4fad;--skin:#f6d4b6;--ring:#0d2248"><use href="#i-face"/></svg><span>dynamo 76</span></div>
+                    <span class="v">2 845 FC</span><span class="up">+12,4%</span></div>
+                <div class="rt"><span class="medal s" aria-label="2"><svg class="crown" viewBox="160 -780 800 660" aria-hidden="true"><path d="M200-160v-80h560v80H200Zm0-160 80-320 160 120 120-240 120 240 160-120 80 320H200Z"/><text x="560" y="-430" text-anchor="middle" dominant-baseline="central" font-family="Inter,sans-serif" font-size="250" font-weight="800">2</text></svg></span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#1a120e;--shirt:#243044;--skin:#e8c4a4;--ring:#121c30"><use href="#i-face"/></svg><span>конь 2005</span></div>
+                    <span class="v">2 712 FC</span><span class="up">+9,8%</span></div>
+                <div class="rt"><span class="medal b" aria-label="3"><svg class="crown" viewBox="160 -780 800 660" aria-hidden="true"><path d="M200-160v-80h560v80H200Zm0-160 80-320 160 120 120-240 120 240 160-120 80 320H200Z"/><text x="560" y="-430" text-anchor="middle" dominant-baseline="central" font-family="Inter,sans-serif" font-size="250" font-weight="800">3</text></svg></span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#1a120e;--shirt:#f2f4f8;--skin:#d7a87a;--ring:#1a2030"><use href="#i-face-b"/></svg><span>Батистута</span></div>
+                    <span class="v">2 430 FC</span><span class="up">+7,1%</span></div>
+                <div class="rt"><span class="n">4</span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#c4894a;--shirt:#1f8a4c;--skin:#f3d0b2;--ring:#123024"><use href="#i-face"/></svg><span>мы мясо</span></div>
+                    <span class="v">2 210 FC</span><span class="up">+4,2%</span></div>
+                <div class="rt"><span class="n">5</span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--shirt:#f4f6fb;--skin:#d9b08c;--ring:#1c2436"><use href="#i-face-z"/></svg><span>Zidane_10</span></div>
+                    <span class="v">1 985 FC</span><span class="up">+3,6%</span></div>
+                <div class="rt me"><span class="n">6</span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#2a241c;--shirt:#147a52;--skin:#f0c8a4;--ring:#0e2a22"><use href="#i-face"/></svg><span>homo ludens 50</span></div>
+                    <span class="v">1 247 FC</span><span class="up">+3,2%</span></div>
+                <div class="rt"><span class="n">7</span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#1c140e;--shirt:#f7f7f7;--skin:#e7b892;--ring:#241810"><use href="#i-face"/></svg><span>ronaldo7</span></div>
+                    <span class="v">1 120 FC</span><span class="up">+2,9%</span></div>
+                <div class="rt"><span class="n">8</span>
+                    <div class="pl"><svg class="av crest" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#034694"/><circle cx="16" cy="16" r="12" fill="none" stroke="#fff" stroke-width="1.2"/><path fill="#fff" d="M16 7.2l1.1 2.5 2.7.2-2 1.8.6 2.6L16 13l-2.4 1.3.6-2.6-2-1.8 2.7-.2z"/><path fill="#f4d35a" d="M11.2 18.2h9.6v1.3h-9.6zM12.4 20.2h7.2v1.2h-7.2z"/><path fill="#fff" d="M13 17.2c.8 1.6 1.8 2.4 3 2.4s2.2-.8 3-2.4h-6z"/></svg><span>chelsea_king</span></div>
+                    <span class="v">1 098 FC</span><span class="up">+2,5%</span></div>
+                <div class="rt"><span class="n">9</span>
+                    <div class="pl"><img class="av" src="img/paYnEE8hcrP96neHRNofhQ_64x64.png" alt=""><span>barca_fan</span></div>
+                    <span class="v">1 045 FC</span><span class="down">−0,8%</span></div>
+                <div class="rt"><span class="n">10</span>
+                    <div class="pl"><svg class="av crest" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#1a0c10"/><path fill="#c8102e" d="M16 5.5l8 2.4v7.4c0 5-3.2 8.2-8 9.8-4.8-1.6-8-4.8-8-9.8V7.9z"/><path stroke="#f6d56a" stroke-width="1.4" d="M16 10.2v9.2M12.4 14.2h7.2"/></svg><span>messi_goat</span></div>
+                    <span class="v">980 FC</span><span class="down">−1,2%</span></div>
+            </div>
+            <div class="panel" data-panel="s" hidden>
+                <div class="rt"><span class="medal g" aria-label="1"><svg class="crown" viewBox="160 -780 800 660" aria-hidden="true"><path d="M200-160v-80h560v80H200Zm0-160 80-320 160 120 120-240 120 240 160-120 80 320H200Z"/><text x="560" y="-430" text-anchor="middle" dominant-baseline="central" font-family="Inter,sans-serif" font-size="250" font-weight="800">1</text></svg></span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#1a120e;--shirt:#243044;--skin:#e8c4a4;--ring:#121c30"><use href="#i-face"/></svg><span>конь 2005</span></div>
+                    <span class="v">9 120 FC</span><span class="up">+31,5%</span></div>
+                <div class="rt"><span class="medal s" aria-label="2"><svg class="crown" viewBox="160 -780 800 660" aria-hidden="true"><path d="M200-160v-80h560v80H200Zm0-160 80-320 160 120 120-240 120 240 160-120 80 320H200Z"/><text x="560" y="-430" text-anchor="middle" dominant-baseline="central" font-family="Inter,sans-serif" font-size="250" font-weight="800">2</text></svg></span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#e8c56a;--shirt:#1d4fad;--skin:#f6d4b6;--ring:#0d2248"><use href="#i-face"/></svg><span>dynamo 76</span></div>
+                    <span class="v">8 870 FC</span><span class="up">+28,0%</span></div>
+                <div class="rt"><span class="medal b" aria-label="3"><svg class="crown" viewBox="160 -780 800 660" aria-hidden="true"><path d="M200-160v-80h560v80H200Zm0-160 80-320 160 120 120-240 120 240 160-120 80 320H200Z"/><text x="560" y="-430" text-anchor="middle" dominant-baseline="central" font-family="Inter,sans-serif" font-size="250" font-weight="800">3</text></svg></span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--shirt:#f4f6fb;--skin:#d9b08c;--ring:#1c2436"><use href="#i-face-z"/></svg><span>Zidane_10</span></div>
+                    <span class="v">7 410 FC</span><span class="up">+19,4%</span></div>
+                <div class="rt"><span class="n">4</span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#1a120e;--shirt:#f2f4f8;--skin:#d7a87a;--ring:#1a2030"><use href="#i-face-b"/></svg><span>Батистута</span></div>
+                    <span class="v">6 980 FC</span><span class="up">+15,2%</span></div>
+                <div class="rt"><span class="n">5</span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#c4894a;--shirt:#1f8a4c;--skin:#f3d0b2;--ring:#123024"><use href="#i-face"/></svg><span>мы мясо</span></div>
+                    <span class="v">6 120 FC</span><span class="up">+11,7%</span></div>
+                <div class="rt"><span class="n">6</span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#1c140e;--shirt:#f7f7f7;--skin:#e7b892;--ring:#241810"><use href="#i-face"/></svg><span>ronaldo7</span></div>
+                    <span class="v">5 240 FC</span><span class="up">+8,8%</span></div>
+                <div class="rt"><span class="n">7</span>
+                    <div class="pl"><svg class="av crest" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#034694"/><circle cx="16" cy="16" r="12" fill="none" stroke="#fff" stroke-width="1.2"/><path fill="#fff" d="M16 7.2l1.1 2.5 2.7.2-2 1.8.6 2.6L16 13l-2.4 1.3.6-2.6-2-1.8 2.7-.2z"/><path fill="#f4d35a" d="M11.2 18.2h9.6v1.3h-9.6zM12.4 20.2h7.2v1.2h-7.2z"/><path fill="#fff" d="M13 17.2c.8 1.6 1.8 2.4 3 2.4s2.2-.8 3-2.4h-6z"/></svg><span>chelsea_king</span></div>
+                    <span class="v">4 300 FC</span><span class="up">+6,1%</span></div>
+                <div class="rt me"><span class="n">8</span>
+                    <div class="pl"><svg class="av" viewBox="0 0 32 32" style="--hair:#2a241c;--shirt:#147a52;--skin:#f0c8a4;--ring:#0e2a22"><use href="#i-face"/></svg><span>homo ludens 50</span></div>
+                    <span class="v">3 980 FC</span><span class="up">+5,5%</span></div>
+                <div class="rt"><span class="n">9</span>
+                    <div class="pl"><img class="av" src="img/paYnEE8hcrP96neHRNofhQ_64x64.png" alt=""><span>barca_fan</span></div>
+                    <span class="v">3 120 FC</span><span class="down">−2,3%</span></div>
+                <div class="rt"><span class="n">10</span>
+                    <div class="pl"><svg class="av crest" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#1a0c10"/><path fill="#c8102e" d="M16 5.5l8 2.4v7.4c0 5-3.2 8.2-8 9.8-4.8-1.6-8-4.8-8-9.8V7.9z"/><path stroke="#f6d56a" stroke-width="1.4" d="M16 10.2v9.2M12.4 14.2h7.2"/></svg><span>messi_goat</span></div>
+                    <span class="v">2 750 FC</span><span class="down">−4,0%</span></div>
+            </div>
+        </main>
+        <nav class="tabbar"><a class="tab" href="portfolio.html">
+            <svg class="ico ">
+                <use href="#i-wallet"/>
+            </svg>
+            <span>Портфель</span></a><a class="tab" href="quotes.html">
+            <svg class="ico ">
+                <use href="#i-chart"/>
+            </svg>
+            <span>Котировки</span></a><a class="tab" href="calendar.html">
+            <svg class="ico ">
+                <use href="#i-calendar"/>
+            </svg>
+            <span>Календарь</span></a><a class="tab" href="news.html">
+            <svg class="ico ">
+                <use href="#i-news"/>
+            </svg>
+            <span>Новости</span></a><a class="tab active" href="rating.html" aria-current="page">
+            <svg class="ico ">
+                <use href="#i-trophy"/>
+            </svg>
+            <span>Рейтинг</span></a></nav>
+    </section>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

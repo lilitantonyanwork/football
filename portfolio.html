@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#030b1a">
+    <title>Портфель — Виртуальная футбольная биржа</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+        <linearGradient id="gUp" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#19e68c" stop-opacity=".35"/>
+            <stop offset="1" stop-color="#19e68c" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gDown" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff4558" stop-opacity=".3"/>
+            <stop offset="1" stop-color="#ff4558" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gSpark" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3dffb0" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#3dffb0" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gRing" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#4dffb0"/>
+            <stop offset="1" stop-color="#0aa763"/>
+        </linearGradient>
+    </defs>
+    <symbol id="i-wallet" viewBox="0 0 24 24">
+        <path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H18v3"/>
+        <path d="M3 7.5V18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2H5.5A2.5 2.5 0 0 1 3 7.5z"/>
+        <circle cx="16.5" cy="14" r=".6"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24">
+        <path d="M3 3v18h18"/>
+        <path d="M7 15l4-4 3 3 6-7"/>
+        <path d="M16 7h4v4"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="16" rx="2"/>
+        <path d="M3 10h18M8 3v4M16 3v4"/>
+        <path d="M8 14h2M12 14h2M16 14h.01M8 17.5h2M12 17.5h2"/>
+    </symbol>
+    <symbol id="i-news" viewBox="0 0 24 24">
+        <rect x="4" y="3" width="16" height="18" rx="2"/>
+        <path d="M8 8h8M8 12h8M8 16h5"/>
+    </symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24">
+        <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/>
+        <path d="M7 6H4v1a3 3 0 0 0 3 3M17 6h3v1a3 3 0 0 1-3 3"/>
+    </symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24">
+        <path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7M10 20a2 2 0 0 0 4 0"/>
+    </symbol>
+    <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="M20 20l-4-4"/>
+    </symbol>
+    <symbol id="i-back" viewBox="0 0 24 24">
+        <path d="M15 5l-7 7 7 7"/>
+    </symbol>
+    <symbol id="i-next" viewBox="0 0 24 24">
+        <path d="M9 5l7 7-7 7"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+        <path d="M12 3l2.7 5.9 6.3.7-4.7 4.3 1.3 6.3L12 17l-5.6 3.2 1.3-6.3L3 9.6l6.3-.7z"/>
+    </symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24">
+        <ellipse cx="12" cy="6" rx="7" ry="3"/>
+        <path d="M5 6v6c0 1.7 3 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3 3 7 3s7-1.3 7-3v-6"/>
+    </symbol>
+    <symbol id="i-growth" viewBox="0 0 24 24">
+        <path d="M4 20V13M10 20V9M16 20v-6"/>
+        <path d="M12 3l5 0 0 5M17 3l-8 7"/>
+    </symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24">
+        <path d="M8 21h8M12 16v5M7 3h10v6a5 5 0 0 1-10 0z"/>
+        <path d="M7 5H4v1.5A3.5 3.5 0 0 0 7.5 10M17 5h3v1.5A3.5 3.5 0 0 1 16.5 10"/>
+    </symbol>
+    <symbol id="i-ball" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M12 8l3.5 2.5-1.3 4h-4.4l-1.3-4zM12 3v5M20 9.5l-4.5 1M17.5 19l-3.3-4.5M6.5 19l3.3-4.5M4 9.5l4.5 1"/>
+    </symbol>
+</svg>
+<div class="gallery">
+    <section class="phone " id="portfolio" aria-label="portfolio">
+        <main class="content">
+            <div class="hello"><span class="avatar">HL</span>
+                <div><small>Привет,</small><b>homo ludens 50</b></div>
+                <button class="bell" aria-label="Уведомления">
+                    <svg class="ico ">
+                        <use href="#i-bell"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="card pv">
+                <div><small>Стоимость портфеля</small>
+                    <div class="big">1 247 FC</div>
+                    <div class="chg up">▲ +4,7%</div>
+                </div>
+                <div class="spark-box">
+                    <svg class="spark up "
+                         data-points="8,24,38,22,30,34,48,36,58,74,66,70,90,82,96"></svg>
+                </div>
+            </div>
+            <div class="two">
+                <div class="card stat">
+                    <svg class="ico ">
+                        <use href="#i-wallet"/>
+                    </svg>
+                    <small>Наличные</small><b>320 FC</b></div>
+                <div class="card stat">
+                    <svg class="ico ">
+                        <use href="#i-chart"/>
+                    </svg>
+                    <small>В акциях</small><b>927 FC</b></div>
+            </div>
+            <div class="sec-head"><h2 class="sec">Мои акции</h2><a class="link" href="quotes.html">Все
+                <svg class="ico ">
+                    <use href="#i-next"/>
+                </svg>
+            </a></div>
+            <a class="card hold" href="club.html">
+                <img class="badge" src="img/4us2nCgl6kgZc0t3hpW75Q_64x64.png" alt="Арсенал">
+                <div class="nm"><b>Арсенал</b><small>5 акций</small></div>
+                <div class="pr"><b>120 FC</b><small class="up">▲ +8%</small></div>
+            </a>
+            <a class="card hold" href="club.html">
+                <img class="badge" src="img/z44l-a0W1v5FmgPnemV6Xw_64x64.png" alt="Манчестер Сити">
+                <div class="nm"><b>Манчестер Сити</b><small>3 акций</small></div>
+                <div class="pr"><b>180 FC</b><small class="up">▲ +4,2%</small></div>
+            </a>
+            <a class="card hold" href="club.html">
+                <img class="badge" src="img/Th4fAVAZeCJWRcKoLW7koA_64x64.png" alt="Реал Мадрид">
+                <div class="nm"><b>Реал Мадрид</b><small>2 акций</small></div>
+                <div class="pr"><b>245 FC</b><small class="down">▼ −1,5%</small></div>
+            </a>
+            <a class="card hold" href="club.html">
+                <img class="badge" src="img/paYnEE8hcrP96neHRNofhQ_64x64.png" alt="Барселона">
+                <div class="nm"><b>Барселона</b><small>4 акций</small></div>
+                <div class="pr"><b>210 FC</b><small class="up">▲ +6,3%</small></div>
+            </a><a class="btn" style="margin-top:14px" href="quotes.html">Купить акции</a></main>
+        <nav class="tabbar"><a class="tab active" href="portfolio.html" aria-current="page">
+            <svg class="ico ">
+                <use href="#i-wallet"/>
+            </svg>
+            <span>Портфель</span></a><a class="tab" href="quotes.html">
+            <svg class="ico ">
+                <use href="#i-chart"/>
+            </svg>
+            <span>Котировки</span></a><a class="tab" href="calendar.html">
+            <svg class="ico ">
+                <use href="#i-calendar"/>
+            </svg>
+            <span>Календарь</span></a><a class="tab" href="news.html">
+            <svg class="ico ">
+                <use href="#i-news"/>
+            </svg>
+            <span>Новости</span></a><a class="tab" href="rating.html">
+            <svg class="ico ">
+                <use href="#i-trophy"/>
+            </svg>
+            <span>Рейтинг</span></a></nav>
+    </section>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
