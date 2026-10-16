@@ -79,7 +79,7 @@ input {
 .gallery {
     display: flex;
     justify-content: center;
-    align-items: center;
+
     min-height: 100vh;
 }
 
@@ -530,13 +530,11 @@ h2.sec {
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 35%, #6d7c8f 0 28%, #243346 30%);
+    object-fit: cover;
+    object-position: center 18%;
     border: 2px solid var(--blue);
-    display: grid;
-    place-items: center;
-    font-size: 13px;
-    font-weight: 700;
-    flex: none
+    flex: none;
+    display: block
 }
 
 .hello small {
@@ -900,36 +898,50 @@ h2.sec {
 }
 
 .mrow {
-    display: grid;
-    grid-template-columns: 52px 28px 1fr 36px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
-    padding: 10px 12px;
+    padding: 10px 12px 11px;
     margin-bottom: 8px
 }
 
-.mrow .d span {
-    display: block;
-    font-size: 12px;
-    color: #9aafc6;
-    line-height: 1.2
+.mrow .info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 0
 }
 
-.mrow .d b {
-    display: block;
-    color: #fff;
+.mrow .when {
+    display: flex;
+    align-items: baseline;
+    gap: 14px
+}
+
+.mrow .when b,
+.mrow .when span {
+    font-size: 15px;
     font-weight: 700;
-    font-size: 14px
+    color: #fff
+}
+
+.mrow .bot {
+    display: flex;
+    align-items: center;
+    gap: 10px
 }
 
 .mrow .mt {
-    flex: 1;
-    font-size: 13.5px
+    min-width: 0;
+    flex: 1
 }
 
 .mrow .mt b {
     display: block;
-    font-weight: 600
+    font-weight: 600;
+    font-size: 14px
 }
 
 .mrow .mt small {
@@ -937,25 +949,41 @@ h2.sec {
     font-size: 12px
 }
 
+.mrow .mlogo {
+    width: 32px;
+    height: 32px;
+    flex: none
+}
+
 .mrow .side {
-    position: relative;
-    width: 36px;
-    height: 36px
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap: 2px;
+    flex: none;
+    width: 36px
 }
 
 .mrow .opp {
-    width: 36px;
-    height: 36px;
     display: block
 }
 
+.mrow .opp.spurs {
+    width: 22px;
+    height: 26px
+}
+
+.mrow .opp.gull {
+    width: 32px;
+    height: 32px
+}
+
 .mrow .warn {
-    position: absolute;
-    top: -7px;
-    right: -8px;
     width: 16px;
     height: 14px;
-    overflow: visible
+    display: block
 }
 
 .form {
@@ -1256,10 +1284,10 @@ h2.sec {
 }
 
 .rt .pl img.av {
-    object-fit: contain;
-    background: #fff;
-    padding: 2px;
-    box-sizing: border-box
+    object-fit: cover;
+    object-position: center 18%;
+    background: #102038;
+    padding: 0
 }
 
 .rt .n {
